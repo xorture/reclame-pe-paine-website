@@ -50,19 +50,3 @@ The codebase reflects a specific sales funnel strategy:
 4.  **Conversion:** A sticky "Call to Action" (CTA) mechanism that programmatically scrolls the user to the lead capture form.
 
 ---
-
-## 📦 Architecture
-
-The project follows a semantic and modular structure:
-
-```text
-reclame-pe-paine/
-├── index.html              # Core Landing Page (Lead Gen Engine)
-├── gdpr.html               # Data Protection Policy
-├── politica-cookies.html   # Cookie Consent Logic
-├── termeni-si-conditii.html# Legal Terms
-├── assets/
-│   ├── css/                # Responsive Stylesheets (Flexbox/Grid)
-│   ├── js/                 # Logic: Observer, Validation, Fetch
-│   └── media/              # Optimized Images & Video Assets
-└── README.md               # Documentation
