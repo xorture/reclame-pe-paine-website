@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Reclame pe Pâine</title>
+    <style>
+    html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+        @media (max-width: 991px) {
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, sans-serif;
+            }
+        
+            /* Header Styles */
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 15px;
+                background-color: #ffffff;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                box-sizing: border-box;
+            }
+        
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+            }
+        
+            .logo-img {
+                width: 40px;
+                height: 40px;
+                object-fit: contain;
+            }
+        
+            .logo h2 {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: none;
+}
+        
+            .contact-btn {
+                background-color: #4CAF50;
+                color: white;
+                padding: 8px 15px;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 0.8rem;
+                white-space: nowrap;
+                font-weight: 600;
+                flex-shrink: 0;
+            }
+        
+            
+            .hero {
+                margin-top: 70px;
+                padding: 30px 15px;
+            }
+        
+            .hero-header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        
+            .hero-title {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+                color: #333;
+            }
+        
+            .hero-subtitle {
+                font-size: 1em;
+                color: #666;
+                max-width: 100%;
+                margin: 0 auto;
+                padding: 0 10px;
+            }
+        
+            /* Form Container */
+            .form-container {
+                max-width: 100%;
+                margin: 0 auto;
+                border: 2px solid #FFA500;
+                border-radius: 10px;
+                padding: 20px;
+                scroll-margin-top: 70px;
+                box-sizing: border-box;
+            }
+        
+            .form-title {
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 1.4em;
+            }
+        
+            .form-group {
+                margin-bottom: 15px;
+            }
+        
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                font-size: 0.9em;
+            }
+        
+            input, textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-bottom: 8px;
+                resize: none;
+                font-size: 0.9em;
+                box-sizing: border-box;
+            }
+        
+            input:valid, textarea:valid {
+                border-color: #4CAF50;
+            }
+        
+            input:user-invalid,
+            textarea:user-invalid {
+                border-color: #ff4444 !important;
+            }
+        
+            .error-message {
+                color: #ff4444;
+                font-size: 0.7em;
+                display: none;
+                margin: -5px 0 8px;
+            }
+        
+            .terms {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 8px;
+                margin: 15px 0;
+                flex-direction: row-reverse;
+            }
+        
+            .terms input[type="checkbox"] {
+                width: 16px;
+                height: 16px;
+                min-width: 16px;
+                margin: 0;
+                order: 1;
+            }
+        
+            .terms label {
+                white-space: normal;
+                font-size: 0.8em;
+                margin: 0;
+                font-weight: normal;
+                order: 2;
+            }
+        
+            button[type="submit"] {
+                background-color: #FFA500;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-size: 14px;
+                width: 100%;
+                transition: background-color 0.3s;
+            }
+        
+            button[type="submit"]:hover {
+                background-color: #FF8C00;
+            }
+        
+            /* Video Section */
+            .video-section {
+                padding: 30px 15px;
+                text-align: center;
+            }
+        
+            .video-grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                max-width: 100%;
+                margin: 15px auto;
+            }
+        
+            video {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                border-radius: 10px;
+                background-color: #000;
+                aspect-ratio: 9/16;
+            }
+        
+            /* Stats Container */
+            .stats-container {
+                max-width: 100%;
+                margin: 30px auto;
+                padding: 20px 15px;
+                box-sizing: border-box;
+            }
+        
+            .stats-header {
+                font-size: 1.6em;
+                color: #333;
+                margin-bottom: 20px;
+                text-align: center;
+                padding: 0 10px;
+            }
+        
+            .stats-subtitle {
+                font-size: 1.1em;
+                color: #666;
+                text-align: center;
+                margin-bottom: 25px;
+                padding: 0 10px;
+            }
+        
+            .boxes-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                max-width: 100%;
+                margin: 0 auto;
+                padding: 0 10px;
+            }
+        
+            .box {
+                background: #fff;
+                padding: 20px;
+                border-radius: 15px;
+                border: 2px solid #FFA500;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+                width: 100%;
+                box-sizing: border-box;
+                opacity: 0;
+                transform: translateX(-100px);
+                transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+        
+            .box:nth-child(even) {
+                transform: translateX(100px);
+            }
+        
+            .box.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        
+            .box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                border-color: #FF8C00;
+            }
+        
+            .box h3 {
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
+        
+            .box p {
+                font-family: 'Source Sans 3', sans-serif;
+                font-weight: 400;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+        
+            .box-img2 {
+                width: 100%;
+                height: auto;
+                max-width: 450px;
+                margin-top: 10px;
+            }
+        
+            .box-img4 {
+                width: 100px;
+                max-width: 40%;
+                height: auto;
+                margin-top: 10px;
+                display: block;
+            }
+        
+            /* TikTok Marketing Section */
+            .tiktok-marketing {
+                text-align: center;
+                padding: 50px 15px;
+                background: #f8f9fa;
+            }
+        
+            .tiktok-marketing h1 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.8rem;
+                color: #2d2d2d;
+                margin-bottom: 15px;
+                padding: 0 10px;
+            }
+        
+            .tiktok-marketing h1::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 3px;
+                background: #FFA500;
+                margin: 10px auto;
+            }
+        
+            .tiktok-marketing h3 {
+                font-family: 'Inter', sans-serif;
+                font-size: 1.4rem;
+                color: #4d4d4d;
+                margin-bottom: 20px;
+                padding: 0 10px;
+            }
+        
+            .tiktok-marketing p {
+                font-size: 1rem;
+                color: #666;
+                max-width: 100%;
+                margin: 0 auto 30px;
+                line-height: 1.5;
+                padding: 0 10px;
+            }
+        
+            .services {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: 100%;
+                margin: 0 auto 30px;
+                padding: 0 15px;
+            }
+        
+            .service {
+                background: white;
+                padding: 20px;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                transition: transform 0.3s ease;
+            }
+        
+            .service:hover {
+                transform: translateY(-5px);
+            }
+        
+            .service h4 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.2rem;
+                color: #2d2d2d;
+                margin-bottom: 10px;
+            }
+        
+            .service p {
+                font-size: 0.9rem;
+                color: #525252;
+                line-height: 1.5;
+            }
+        
+            .cta {
+                background-color: #4CAF50;
+                color: white;
+                padding: 15px 30px;
+                font-size: 1rem;
+                border: none;
+                cursor: pointer;
+                border-radius: 30px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                margin-top: 20px;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+        
+            .cta:hover {
+                background-color: #45a049;
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(76,175,80,0.3);
+            }
+        
+            /* Footer */
+            .footer {
+                position: relative;
+                background: white;
+                padding: 40px 15px 30px;
+                text-align: center;
+                border-top: 1px solid #f0f0f0;
+            }
+        
+            .footer-background-text {
+                font-size: 2.5rem;
+                color: #f5f5f5;
+                margin-bottom: 20px;
+                letter-spacing: -2px;
+                position: relative;
+                z-index: 1;
+            }
+        
+            .footer-content {
+                position: relative;
+                z-index: 2;
+            }
+        
+            .legal-links {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+        
+            .legal-links a {
+                color: #666;
+                text-decoration: none;
+                font-size: 0.85rem;
+                transition: color 0.3s ease;
+            }
+        
+            .legal-links a:hover {
+                color: #FFA500;
+            }
+        
+            .copyright {
+                color: #999;
+                font-size: 0.8rem;
+                margin: 15px 0;
+            }
+        
+            .anpc-buttons {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+        
+            .anpc-button {
+                background: white;
+                border: 1px solid #e0e0e0;
+                padding: 10px 20px;
+                border-radius: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                text-decoration: none;
+                color: #555;
+                transition: all 0.3s ease;
+                font-size: 0.8rem;
+            }
+        
+            .anpc-button:hover {
+                border-color: #FFA500;
+                box-shadow: 0 2px 8px rgba(255,165,0,0.1);
+                transform: translateY(-2px);
+            }
+        
+            .anpc-button i {
+                font-size: 1rem;
+            }
+        
+            .promo-success {
+                display: none;
+                color: #4CAF50;
+                margin-bottom: 10px;
+                font-size: 0.9em;
+            }
+        }
+        
+        /* ===== DESKTOP STYLES (from initial version) ===== */
+        @media (min-width: 992px) {
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, sans-serif;
+            }
+        
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px 50px;
+                background-color: #ffffff;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+        
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+            }
+        
+            .logo-img {
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+            }
+        
+            .contact-btn {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 30px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+        
+            .hero {
+                margin-top: 100px;
+                padding: 50px 20px;
+            }
+        
+            .hero-header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+        
+            .hero-title {
+                font-size: 2.8em;
+                margin-bottom: 15px;
+                color: #333;
+            }
+        
+            .hero-subtitle {
+                font-size: 1.3em;
+                color: #666;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        
+            .form-container {
+                max-width: 600px;
+                margin: 0 auto;
+                border: 2px solid #FFA500;
+                border-radius: 10px;
+                padding: 30px;
+                scroll-margin-top: 100px;
+            }
+        
+            .form-title {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        
+            .form-group {
+                margin-bottom: 20px;
+            }
+        
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+        
+            input, textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                resize: none;
+            }
+        
+            input:valid, textarea:valid {
+                border-color: #4CAF50;
+            }
+        
+            input:user-invalid,
+            textarea:user-invalid {
+                border-color: #ff4444 !important;
+            }
+        
+            .error-message {
+                color: #ff4444;
+                font-size: 0.8em;
+                display: none;
+                margin: -8px 0 10px;
+            }
+        
+            .terms {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 8px;
+                margin: 20px 0;
+                flex-direction: row-reverse;
+            }
+        
+            .terms input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+                min-width: 18px;
+                margin: 0;
+                order: 1;
+            }
+        
+            .terms label {
+                white-space: nowrap;
+                font-size: 0.9em;
+                margin: 0;
+                font-weight: normal;
+                order: 2;
+            }
+        
+            button[type="submit"] {
+                background-color: #FFA500;
+                color: white;
+                padding: 15px 40px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-size: 16px;
+                width: 100%;
+                transition: background-color 0.3s;
+            }
+        
+            button[type="submit"]:hover {
+                background-color: #FF8C00;
+            }
+        
+            .video-section {
+                padding: 50px 20px;
+                text-align: center;
+            }
+        
+            .video-grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+        
+            video {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                border-radius: 10px;
+                background-color: #000;
+                aspect-ratio: 9/16;
+            }
+        
+            .stats-container {
+                max-width: 1200px;
+                margin: 50px auto;
+                padding: 30px 20px;
+            }
+        
+            .stats-header {
+                font-size: 2.2em;
+                color: #333;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+        
+            .stats-subtitle {
+                font-size: 1.4em;
+                color: #666;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+        
+            .boxes-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+                justify-content: center;
+            }
+        
+            .box {
+                background: #fff;
+                padding: 25px;
+                border-radius: 15px;
+                border: 3px solid #FFA500;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: all 0.3s ease-in-out; 
+                animation: none;
+                opacity: 0;
+                transform: translateX(-100px);
+                transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+            
+            .box:nth-child(even) {
+                transform: translateX(100px);
+            }
+            
+            .box.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        
+            .box:hover {
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                border-color: #FF8C00;
+                border-width: 4px;
+            }
+        
+            .box1 {
+                animation-delay: 0.2s;
+                width: 500px;   
+                height: 250px;  
+            }
+        
+            .box2 {
+                animation-delay: 0.4s;
+                width: 500px;
+                height: 250px;
+            }
+        
+            .box3 {
+                animation-delay: 0.6s;
+                width: 650px;
+                height: 200px;
+            }
+        
+            .box4 {
+                animation-delay: 0.8s;
+                width: 350px;
+                height: 200px;
+                position: relative;
+                padding-bottom: 40px;
+            }
+        
+            .box h3 {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+            
+            .box p {
+                font-family: 'Source Sans 3', sans-serif;
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .box-img2 {
+                width: 450px;
+                height: 100px;
+            }
+        
+            .box-img4 {
+                position: absolute; 
+                bottom: -7px;     
+                right: 24px;
+                width: 100px;
+                max-width: 40%;
+                height: auto;
+                max-height: 120px;
+            }
+        
+            .tiktok-marketing {
+                text-align: center;
+                padding: 80px 20px;
+                background: #f8f9fa;
+            }
+        
+            .tiktok-marketing h1 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 2.5rem;
+                color: #2d2d2d;
+                margin-bottom: 15px;
+            }
+        
+            .tiktok-marketing h1::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 3px;
+                background: #FFA500;
+                margin: 10px auto;
+            }
+        
+            .tiktok-marketing h3 {
+                font-family: 'Inter', sans-serif;
+                font-size: 1.8rem;
+                color: #4d4d4d;
+                margin-bottom: 30px;
+            }
+        
+            .tiktok-marketing p {
+                font-size: 1.1rem;
+                color: #666;
+                max-width: 800px;
+                margin: 0 auto 50px;
+                line-height: 1.6;
+            }
+        
+            .services {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                max-width: 1200px;
+                margin: 0 auto 40px;
+                padding: 20px;
+            }
+        
+            .service {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                transition: transform 0.3s ease;
+            }
+        
+            .service:hover {
+                transform: translateY(-5px);
+            }
+        
+            .service h4 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.3rem;
+                color: #2d2d2d;
+                margin-bottom: 15px;
+            }
+        
+            .service p {
+                font-size: 1rem;
+                color: #525252;
+                line-height: 1.6;
+            }
+        
+            .cta {
+                background-color: #4CAF50;
+                color: white;
+                padding: 18px 45px;
+                font-size: 1.1rem;
+                border: none;
+                cursor: pointer;
+                border-radius: 30px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                margin-top: 30px;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+            }
+        
+            .cta:hover {
+                background-color: #45a049;
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(76,175,80,0.3);
+            }
+        
+            .footer {
+                position: relative;
+                background: white;
+                padding: 60px 20px 40px;
+                text-align: center;
+                border-top: 1px solid #f0f0f0;
+            }
+        
+            .footer-background-text {
+                font-size: 4rem;
+                color: #f5f5f5;
+                margin-bottom: 30px;
+                letter-spacing: -3px;
+                position: relative;
+                z-index: 1;
+            }
+        
+            .footer-content {
+                position: relative;
+                z-index: 2;
+            }
+        
+            .legal-links {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin-bottom: 25px;
+            }
+        
+            .legal-links a {
+                color: #666;
+                text-decoration: none;
+                font-size: 0.95rem;
+                transition: color 0.3s ease;
+            }
+        
+            .legal-links a:hover {
+                color: #FFA500;
+            }
+        
+            .copyright {
+                color: #999;
+                font-size: 0.9rem;
+                margin: 20px 0;
+            }
+        
+            .anpc-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 30px;
+            }
+        
+            .anpc-button {
+                background: white;
+                border: 1px solid #e0e0e0;
+                padding: 12px 25px;
+                border-radius: 25px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                text-decoration: none;
+                color: #555;
+                transition: all 0.3s ease;
+            }
+        
+            .anpc-button:hover {
+                border-color: #FFA500;
+                box-shadow: 0 2px 8px rgba(255,165,0,0.1);
+                transform: translateY(-2px);
+            }
+        
+            .anpc-button i {
+                font-size: 1.2rem;
+            }
+        
+            .promo-success {
+                display: none;
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        }
+        </style>
+
+</head>
+<body>
+    <header>
+        <a href="#top-form" class="logo">
+            <img src="assets/images/logo.png" alt="Logo" class="logo-img">
+            <h2>Reclame pe Pâine</h2>
+        </a>
+        <button class="contact-btn">Contactează-ne</button>
+    </header>
+
+    <div class="hero">
+        <div class="hero-header">
+            <h1 class="hero-title">🍞 Generam vanzari din reclame pe TikTok 🚀</h1>
+            <p class="hero-subtitle">📈 Completeaza formularul ACUM si facem clientii sa stea la coada sa-ti cumpere produsul ca pe painea calda 🍞</p>
+        </div>
+
+        <div class="form-container" id="top-form">
+            <h2 class="form-title">Completează datele pentru colaborare</h2>
+            <form action="https://formsubmit.co/reclamepepaine@gmail.com" method="POST">
+                <div class="form-group">
+                    <label>Numele tău complet:</label>
+                    <input type="text" name="nume" required pattern="[A-Za-zȘșȚțĂăÂâÎîȘșȚț ]+">
+                    <span class="error-message">Te rugăm să introduci doar litere</span>
+                </div>
+        
+                <div class="form-group">
+                    <label>Număr de telefon:</label>
+                    <input type="tel" name="telefon" required
+                    pattern="^0[2-7][0-9]{8}$"
+                    title="Exemple valide: 0722123456 sau 0211234567"
+                    placeholder="07xxxxxxxx"
+                    maxlength="10"
+                    onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
+                </div>
+        
+                <div class="form-group">
+                    <label>Adresă de email:</label>
+                    <input type="email" name="email" required
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                           title="exemplu@domeniu.com">
+                    <span class="error-message">Introdu o adresă de email validă</span>
+                </div>
+        
+                <div class="form-group">
+                    <label>Descrie pe scurt afacerea ta:</label>
+                    <textarea name="mesaj" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Cod Reducere:</label>
+                    <input type="text" name="cod-reducere" required pattern="(Reducere10|reducere10|49lei|lei49)+">
+                    <span class="error-message">Te rugăm să introduci un cod valabil</span>
+                </div>
+                
+                <div class="promo-success" style="display: none; color: #4CAF50; margin-bottom: 15px;">
+                    Cod reducere 10% activat!
+                </div>
+        
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">Sunt de acord cu Termenii și Condițiile platformei</label>
+                </div>
+                <button type="submit">Trimite cererea</button>
+            </form>
+        </div>
+
+    <div class="video-section">
+        <h1>🍽️ Uite cateva retete care capteaza atentia publicului larg.</h1>
+
+
+        <div class="video-grid">
+            <video controls>
+                <source src="assets/videos/video1.mp4" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="assets/videos/video2.mp4" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="assets/videos/video3.mp4" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="assets/videos/video4.mp4" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="assets/videos/video5.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="stats-container">
+        <h1 class="stats-header">TikTok este cea mai calitativa "făină" pe care o poți folosi la reclamele tale</h1>
+        <p class="stats-subtitle">👉 Dacă ai ingredientele potrivite, vei obține rezultate spectaculoase!</p>
+    
+        <div class="boxes-grid">
+            <!-- rand1 -->
+            <div class="box box1">
+                <h3>💰 $14,7 miliarde de dolari generati din TikTok</h3>
+                <p>ㅤStudiile arata ca in 2023, TikTok a generat $14,7 miliarde de dolari pentru afacerile mici si medii si prin clienti recurenti au facut inca $24,2 miliarde de dolari incasari totale. 
+                    <br>ㅤMai mult de jumatate din afaceristi folosesc TikTok ca sa-si promoveze afacerea, postand in medie de 9 ori pe luna. 
+                    <br>ㅤTu ce mai astepti?</p>
+            </div>
+            
+            <div class="box box2">
+                <h3>💵 Cu o investitie minima in reclame ai rezultate uimitoare</h3>
+                <p>ㅤSpecialistii nostrii analizeaza algoritmul TikTok ca sa ai parte de cea mai buna rata de conversie 🌾-> 🍞</p>
+                <img src="assets/images/poza1.png" alt="poza" class="box-img2">
+
+            </div>
+        
+            <!-- rand2 -->
+            <div class="box box3">
+                <h3>⏳ Nu mai pierde bani!</h3>
+                <p>ㅤIncepe ACUM sa-ti promovezi afacerea pe TikTok si nu lasa concurenta sa-ti fure painea de la gura doar pentru ca nu esti prezent in mediul online.
+                    <br>ㅤAsa ca, ce mai astepti?
+                    <br>ㅤCompleteaza formularul iar noi iti adaugam drojdia in afacere ca sa creasca precum painea</p>
+            </div>
+            
+            <div class="box box4">
+                <h3>🔥 Creștere rapidă! 🔥</h3>
+                <p>ㅤAșa cum aluatul dospește și devine o pâine pufoasă, pe TikTok poți crește rapid cu strategia noastra <span class="views"></span></p>
+
+
+            </div>
+        </div>
+    </div>
+    <section class="tiktok-marketing">
+        <h1>🚫 NU trebuie sa apari in videoclipuri.</h1>
+        <h3>👉 Noi ne ocupăm de TOT! 🎬 De la 🌾la 🍞</h3>
+      
+        <div class="services">
+          <div class="service">
+            <h4>✅IDEI:</h4>
+            <p> <b>IDEA este cea mai importantă parte a unui videoclip!</b>
+                <br>• Un clip bun începe cu o idee puternică. Fara o reteta buna, nici brutarul, nici cuptorul nu-ti vor face painea gustoasa.
+                <br>• Coacem videoclipurile exact pe gustul publicului tau de care se va bucura pana la ultima imbucatura.</p>
+          </div>
+          <div class="service">
+            <h4>✅ SCRIPT:</h4>
+            <p><b>📜 Scenariul este aluatul bine frământat al videoclipului! </b>
+                <br> • Avem nevoie de un HOOK puternic – primul ingredient esențial care face oamenii să nu dea scroll.
+                <br> • Apoi, frământăm povestea astfel încât să fie captivantă și să mențină atenția.
+                <br> • La final, adăugăm call-to-action-ul – exact ca mirosul de pâine proaspătă care te face să vrei mai mult.</p>
+          </div>
+          <div class="service">
+            <h4>✅ ACTORI:</h4>
+            <p><b>🎭 Fiecare brutărie are nevoie de mâini pricepute – la fel și un videoclip!</b>
+                <br>• Alegem actorii potriviți pentru mesajul și imaginea brandului tău.
+                <br>• Dacă nu vrei să apari, găsim noi pe cineva care să „frământe” conținutul exact cum trebuie.</p>
+          </div>
+          <div class="service">
+            <h4>✅ FILMARE:</h4>
+            <p><b>🎥 Cuptorul trebuie să fie la temperatura perfectă pentru o pâine reușită – la fel și filmarea!</b>
+                <br>• Alegem unghiurile, lumina și dinamica potrivite pentru a da „gust” conținutului.
+                <br>• Captăm detalii apetisante care fac publicul să rămână până la ultima secundă.</p>
+          </div>
+          <div class="service">
+            <h4>✅ POSTARE:</h4>
+            <p><b>📲 Pâinea trebuie scoasă din cuptor la momentul potrivit – la fel și un videoclip!</b>
+                <br>• Postăm exact când publicul este activ, pentru a obține cele mai bune rezultate.
+                <br>• Adăugăm „condimentele” perfecte: hashtag-uri strategice și descrieri care atrag atenția.</p>
+          </div>
+          <div class="service">
+            <h4>✅ SOCIAL MEDIA MANAGEMENT:</h4>
+            <p><b>📊 Un singur clip este ca o pâine caldă – bun pe moment, dar ai nevoie de un întreg cuptor ca să hrănești afacerea!</b>
+                <br>• Monitorizăm performanța fiecărui videoclip și optimizăm rețeta pentru rezultate mai bune.
+                <br>• Interacționăm cu publicul și construim o strategie de creștere constantă.</p>
+          </div>
+        </div>
+      
+        <button class="cta" onclick="document.querySelector('#top-form').scrollIntoView({ behavior: 'smooth' })">ÎNCEPE ACUM</button>
+      </section>
+    <footer class="footer">
+    <div class="footer-background-text">@reclame.pe.paine    </div>
+    
+    <div class="footer-content">
+        <nav class="legal-links">
+            <a href="termeni-si-conditii.html">Termeni și Condiții</a>
+            <a href="politica-cookies.html">Politica Cookies</a>
+            <a href="gdpr.html">GDPR</a>
+        </nav>
+
+        <div class="copyright">
+            Copyright © 2025 Reclame Pe Paine | Toate drepturile sunt rezervate
+            <br> Made by RXVL
+        </div>
+
+        <div class="anpc-buttons">
+            <a href="https://reclamatiisal.anpc.ro" class="anpc-button" target="_blank">
+                <i class="fas fa-balance-scale"></i>
+                Soluționarea Alternativă a Litigiilor
+            </a>
+            
+            <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO" class="anpc-button" target="_blank">
+                <i class="fas fa-globe"></i>
+                Soluționarea Online a Litigiilor
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+window.addEventListener('resize', function() {
+    document.body.style.overflowX = 'hidden';
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.overflowX = 'hidden';
+    window.addEventListener('resize', function() {
+        document.body.style.overflowX = 'hidden';
+    });
+    setTimeout(function() {
+        document.body.style.overflowX = 'hidden';
+    }, 100);
+
+    const boxes = document.querySelectorAll('.box');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 200); 
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    boxes.forEach(box => {
+        observer.observe(box);
+    });
+
+    document.querySelector('.contact-btn').addEventListener('click', () => {
+        document.querySelector('.form-container').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    const form = document.querySelector('form');
+    const inputs = form.querySelectorAll('input, textarea');
+
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            if(input.validity.valid) {
+                input.style.borderColor = '#4CAF50';
+            } else {
+                input.style.borderColor = '#ff4444';
+            }
+        });
+
+        input.addEventListener('blur', () => {
+            if(input.value !== '' && !input.validity.valid) {
+                input.nextElementSibling.style.display = 'block';
+            } else {
+                input.nextElementSibling.style.display = 'none';
+            }
+        });
+    });
+
+    document.querySelector('input[type="text"][pattern="[Reducere10]+"]').addEventListener('input', function(e) {
+        const promoMessage = document.querySelector('.promo-success');
+        if(e.target.value === 'Reducere10') {
+            promoMessage.style.display = 'block';
+        } else {
+            promoMessage.style.display = 'none';
+        }
+    });
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        let isValid = true;
+        inputs.forEach(input => {
+            if(!input.validity.valid) {
+                input.nextElementSibling.style.display = 'block';
+                isValid = false;
+            }
+        });
+
+        if(!isValid) {
+            form.querySelector(':invalid')?.focus();
+            return;
+        }
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Se trimite...';
+        submitBtn.style.opacity = '0.7';
+
+        try {
+            const formData = new FormData(form);
+            
+            formData.append('_subject', 'Cerere colaborare de pe site');
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
+            
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                alert('Cererea ta a fost trimisă cu succes! Te vom contacta în cel mai scurt timp posibil.');
+                form.reset();
+                
+                document.querySelector('.promo-success').style.display = 'none';
+            } else {
+                throw new Error('Eroare la trimiterea formularului');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('A apărut o eroare la trimiterea formularului. Te rugăm să încerci din nou sau să ne contactezi direct la reclamepepaine@gmail.com');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+            submitBtn.style.opacity = '1';
+        }
+    });
+});
+    </script>
+</body>
+</html>

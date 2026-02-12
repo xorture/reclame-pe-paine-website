@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termeni și Condiții - Reclame pe Pâine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+    
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+    
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 50px;
+            background-color: #ffffff;
+            top: 0;
+            z-index: 1000;
+        }
+    
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+    
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+    
+        .contact-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        .footer {
+            position: relative;
+            background: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+        }
+    
+        .footer-background-text {
+            font-size: 4rem;
+            color: #f5f5f5;
+            margin-bottom: 30px;
+            letter-spacing: -3px;
+            position: relative;
+            z-index: 1;
+        }
+    
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+    
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+    
+        .legal-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+    
+        .legal-links a:hover {
+            color: #FFA500;
+        }
+    
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+            margin: 20px 0;
+        }
+    
+        .anpc-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+    
+        .anpc-button {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+    
+        .anpc-button:hover {
+            border-color: #FFA500;
+            box-shadow: 0 2px 8px rgba(255,165,0,0.1);
+            transform: translateY(-2px);
+        }
+    
+        .anpc-button i {
+            font-size: 1.2rem;
+        }
+    
+        .terms-content {
+            padding: 120px 20px 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    
+        .terms-content h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    
+        .terms-content h2 {
+            font-size: 1.8rem;
+            color: #4CAF50;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+    
+        .terms-content h3 {
+            font-size: 1.4rem;
+            color: #666;
+            margin: 30px 0 15px;
+        }
+    
+        .terms-content p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+    
+        .terms-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+    
+        .terms-content li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+    
+        /* Mobile Styles */
+        @media (max-width: 991px) {
+            header {
+                padding: 8px 15px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+    
+            .logo {
+                gap: 8px;
+            }
+    
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+    
+            .logo h2 {
+                font-size: 1rem;
+                white-space: nowrap;
+                overflow: visible;
+                text-overflow: clip;
+                max-width: none;
+            }
+    
+            .contact-btn {
+                padding: 8px 15px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                white-space: nowrap;
+                font-weight: 600;
+                flex-shrink: 0;
+            }
+    
+            .footer {
+                padding: 40px 15px 30px;
+            }
+    
+            .footer-background-text {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                letter-spacing: -2px;
+            }
+    
+            .legal-links {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+    
+            .legal-links a {
+                font-size: 0.85rem;
+            }
+    
+            .copyright {
+                font-size: 0.8rem;
+                margin: 15px 0;
+            }
+    
+            .anpc-buttons {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 20px;
+            }
+    
+            .anpc-button {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+                justify-content: center;
+                gap: 8px;
+            }
+    
+            .anpc-button i {
+                font-size: 1rem;
+            }
+    
+            .terms-content {
+                padding: 100px 15px 40px;
+            }
+    
+            .terms-content h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+    
+            .terms-content h2 {
+                font-size: 1.5rem;
+                margin: 30px 0 15px;
+            }
+    
+            .terms-content h3 {
+                font-size: 1.2rem;
+                margin: 25px 0 12px;
+            }
+    
+            .terms-content p {
+                font-size: 0.95rem;
+            }
+        }
+    
+        /* Tablet Styles */
+        @media (max-width: 768px) {
+            .footer-background-text {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <h2>Reclame pe Pâine</h2>
+        </a>
+        <a href="https://reclamepepaine.ro" class="contact-btn">Contactează-ne</a>    </header>
+
+    <main class="terms-content">
+        <h1>Termeni și Condiții</h1>
+        
+        <section class="definition-list">
+            <h2>DEFINIȚII ȘI TERMENI</h2>
+            
+            <div class="definition-item">
+                <div class="definition-term">Prestator</div>
+                <div class="definition-description">– DOUBLE INCOME SRL, cu sediul în județul Buzău, sat Măgăriți, comuna Beceni, Strada Principală nr. M nr. 26, înregistrată la Oficiul Registrului Comerțului, având C.U.I.: 51113195 – societatea care operează site-ul web reclamepepaine.ro.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Cumpărător / Client</div>
+                <div class="definition-description">– orice persoană fizică ce are vârsta peste 18 ani, o persoană juridică sau orice entitate juridică care își creează un Cont pe Site și efectuează o Comandă.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Utilizator</div>
+                <div class="definition-description">– orice persoană fizică cu vârsta de peste 18 ani sau persoană juridică înregistrată pe Site, care, prin finalizarea procesului de creare a Contului, își exprimă acordul cu privire la clauzele specifice site-ului din secțiunea Termeni și Condiții.</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>TERMENI</h2>
+            
+            <div class="definition-item">
+                <div class="definition-term">Comandă</div>
+                <div class="definition-description">– un document electronic care servește ca formă de comunicare între Prestator și Cumpărător, prin care Cumpărătorul își exprimă intenția de a achiziționa Servicii de pe Site, prin intermediul acestuia.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Servicii</div>
+                <div class="definition-description">– orice serviciu disponibil pe Site, inclusiv cele menționate în Comandă, care urmează a fi furnizate de Prestator Cumpărătorului/Clientului în baza Contractului încheiat.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Contract</div>
+                <div class="definition-description">– reprezintă un contract la distanță încheiat între Prestator și Cumpărător, fără ca prezența fizică simultană a acestora să fie necesară.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Conținut</div>
+                <div class="definition-description">– se referă la:
+                    <ul>
+                        <li>toate informațiile de pe Site care pot fi vizualizate, accesate sau obținute prin utilizarea unui echipament electronic;</li>
+                        <li>conținutul oricărui mesaj trimis Cumpărătorilor de către Prestator prin mijloace electronice și/sau alte canale de comunicare disponibile;</li>
+                        <li>orice informație transmisă Cumpărătorului prin orice mijloc de către un angajat/colaborator al Prestatorului, conform datelor de contact, specificate sau nu;</li>
+                        <li>informații referitoare la Serviciile și/sau tarifele practicate de Prestator într-o anumită perioadă;</li>
+                        <li>informații referitoare la Serviciile și/sau tarifele practicate de un terț cu care Prestatorul are încheiate contracte de parteneriat, într-o anumită perioadă;</li>
+                        <li>date legate de Prestator sau alte informații confidențiale ale acestuia.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Review</div>
+                <div class="definition-description">– o evaluare scrisă realizată de deținătorul sau beneficiarul unui Serviciu, bazată pe experiența personală, prin care se exprima opinia dacă Serviciul respectă sau nu standardele de calitate solicitate.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Rating</div>
+                <div class="definition-description">– modul de exprimare a nivelului de satisfacție a unui Utilizator/Client/Cumpărător față de un produs. Rating-ul se exprimă prin stele, fiecare Serviciu putând primi un punctaj între o stea și cinci stele. Acest grad de satisfacție este asociat unui review.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Comentariu</div>
+                <div class="definition-description">– apreciere sau observație cu scop critic, referitoare la un Review sau la un alt comentariu.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Întrebare</div>
+                <div class="definition-description">– formulare adresată altor Utilizatori/Clienți/Cumpărători pentru a obține informații despre Serviciile din pagina respectivă.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Răspuns</div>
+                <div class="definition-description">– informație scrisă transmisă Utilizatorului/Clientului/Cumpărătorului care a adresat o întrebare pe Site, în pagina unui anumit Serviciu. Răspunsul reprezintă o explicație oferită de un Utilizator/Client/Cumpărător unui alt Utilizator/Client/Cumpărător în cadrul unei discuții.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Document</div>
+                <div class="definition-description">– se referă la prezentele Termeni și Condiții.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Comunicări Comerciale</div>
+                <div class="definition-description">– orice tip de mesaj trimis (de exemplu: e-mail/SMS/telefonic/mobile push/webpush/etc.) care conține informații generale și tematice, despre Servicii similare sau complementare cu cele achiziționate, oferte, promoții și alte comunicări comerciale cum ar fi sondaje de opinie sau cercetări de piață.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Tranzacție</div>
+                <div class="definition-description">– încasarea sau rambursarea unei sume rezultate din vânzarea unui Serviciu de către reclamepepaine.ro, Cumpărătorului, utilizând serviciile procesatorului de carduri acceptat de Prestator, indiferent de metoda de livrare.</div>
+            </div>
+            
+            <div class="definition-item">
+                <div class="definition-term">Specificații</div>
+                <div class="definition-description">– toate specificațiile și/sau descrierile Serviciilor, așa cum sunt prezentate în descrierea acestora.</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>DOCUMENTE CONTRACTUALE</h2>
+            
+            <h3>2.1.</h3>
+            <p>Prin plasarea unei Comenzi pe Site, Cumpărătorul acceptă forma de comunicare (telefonic, în scris sau prin e-mail) utilizată de Prestator pentru derularea operațiunilor comerciale.</p>
+            
+            <h3>2.2.</h3>
+            <p>Contractul se consideră încheiat între Prestator și Cumpărător/Client în momentul în care Prestatorul primește, prin e-mail sau prin serviciu de curierat, contractul semnat de către Client.</p>
+            
+            <h3>2.3.</h3>
+            <p>Documentele și informațiile puse la dispoziție de către Prestator pe Site vor constitui baza Contractului.</p>
+        </section>
+
+        <section>
+            <h2>POLITICA DE VÂNZARE ONLINE</h2>
+            
+            <h3>3.1.</h3>
+            <p>Accesul pentru efectuarea unei Comenzi este permis oricărui Utilizator/Cumpărător.</p>
+            <p>Pentru motive justificate, reclamepepaine.ro își rezervă dreptul de a restricționa accesul Utilizatorului/Cumpărătorului la efectuarea unei Comenzi și/sau la unele dintre modalitățile de plată acceptate, în cazul în care consideră că, pe baza conduitei sau activității Utilizatorului/Cumpărătorului pe Site, acțiunile acestuia ar putea prejudicia în vreun fel reclamepepaine.ro. În astfel de cazuri, Utilizatorul/Cumpărătorul poate contacta Departamentul de Relații cu Clienții al vânzătorului pentru a fi informat cu privire la motivele care au condus la aplicarea măsurilor menționate.</p>
+            
+            <h3>3.2.</h3>
+            <p>Comunicarea cu Prestatorul se poate realiza prin interacțiunea directă cu acesta sau prin adresele de contact menționate la secțiunea „Contact" de pe Site.</p>
+            
+            <h3>3.3.</h3>
+            <p>În cazul unui volum de trafic neobișnuit de mare provenit din partea unei rețele de internet, reclamepepaine.ro își rezervă dreptul de a solicita Utilizatorilor/Cumpărătorilor să introducă manual codurile de validare de tip captcha, pentru a proteja informațiile de pe Site.</p>
+            
+            <h3>3.4.</h3>
+            <p>Toate tarifele aferente Serviciilor prezentate pe Site sau în contracte sunt exprimate în lei (RON) și includ TVA.</p>
+            
+            <h3>3.5.</h3>
+            <p>În cazul plăților online, Prestatorul nu este/nu poate fi făcut responsabil pentru niciun alt cost suplimentar suportat de către Cumpărător, inclusiv, dar fără a se limita la comisioane de conversie valutară aplicate de banca emitentă a cardului acestuia, în cazul în care moneda de emitere diferă de RON. Responsabilitatea pentru această acțiune o poartă doar Cumpărătorul.</p>
+            
+            <h3>3.6.</h3>
+            <p>Toate informațiile folosite pentru descrierea Serviciilor disponibile pe Site (imagini statice/dinamice/prezentări multimedia etc.) nu reprezintă o obligație contractuală din partea Prestatorului, acestea fiind utilizate exclusiv cu titlu de prezentare.</p>
+            
+            <h3>3.7.</h3>
+            <p>După 14 (paisprezece) zile de la achiziționarea unui Serviciu, Cumpărătorului i se va solicita completarea unui Review referitor la Serviciul achiziționat. Solicitarea va fi trimisă către adresa de e-mail înregistrată de Cumpărător în Cont. În acest mod, Cumpărătorul contribuie la informarea altor posibili Utilizatori/Clienți/Cumpărători de pe Site și se implică activ în dezvoltarea de noi Servicii și în detalierea completă a caracteristicilor Serviciilor.</p>
+        </section>
+
+        <section>
+            <h2>DREPTUL DE PROPRIETATE INTELECTUALĂ ȘI INDUSTRIALĂ</h2>
+            
+            <h3>4.1.</h3>
+            <p>Conținutul, astfel cum este definit în preambul, inclusiv, dar nelimitându-se la logo-uri, reprezentări stilizate, simboluri comerciale, imagini statice, imagini dinamice, text și/sau conținut multimedia prezentate pe Site, sunt proprietatea exclusivă a DOUBLE INCOME SRL, acesteia fiindu-i rezervate toate drepturile obținute în acest sens în mod direct sau indirect (prin licențe de utilizare și/sau publicare).</p>
+            
+            <h3>4.2.</h3>
+            <p>Clientului/Cumpărătorului/Utilizatorului nu îi este permisă copierea, distribuirea, publicarea, transferul către terțe părți, modificarea și/sau alterarea, utilizarea, legarea la, expunerea, includerea oricărui Conținut în orice alt context decât cel original intenționat de DOUBLE INCOME SRL, includerea oricărui Conținut în afara Site-ului, îndepărtarea însemnelor care semnifică dreptul de autor al DOUBLE INCOME SRL asupra Conținutului, precum și participarea la transferul, vânzarea, distribuția unor materiale realizate prin reproducerea, modificarea sau afișarea Conținutului, decât cu acordul scris expres al DOUBLE INCOME SRL.</p>
+            
+            <h3>4.3.</h3>
+            <p>Orice Conținut la care Clientul/Cumpărătorul/Utilizatorul are și/sau obține acces prin orice mijloc, se află sub incidența Documentului, în cazul în care Conținutul nu este însoțit de un acord de utilizare specific și valid încheiat între DOUBLE INCOME SRL și acesta, și fără nicio garanție implicită sau expres formulată din partea DOUBLE INCOME SRL cu referire la acel Conținut.</p>
+            
+            <h3>4.4.</h3>
+            <p>Clientul/Cumpărătorul/Utilizatorul poate copia, transfera și/sau utiliza Conținut numai în scopuri personale sau non-comerciale, numai în cazul în care acestea nu intră în conflict cu prevederile Documentului.</p>
+            
+            <h3>4.5.</h3>
+            <p>Niciun Conținut transmis către Client, Utilizator sau Cumpărător, prin orice mijloc de comunicare (electronic, telefonic, etc) sau dobândit de acesta prin accesare, vizitare și/sau vizualizare nu constituie o obligație contractuală din partea DOUBLE INCOME SRL și/sau al angajatului/prepusului DOUBLE INCOME SRL care a mijlocit transferul de Conținut, în cazul în care aceasta există, față de respectivul Conținut.</p>
+            
+            <h3>4.6.</h3>
+            <p>Este interzisă orice utilizare a Conținutului în alte scopuri decât cele permise expres prin prezentul Document sau de acordul de utilizare care îl însoțește, în cazul în care acesta există.</p>
+        </section>
+
+        <section>
+            <h2>COMANDA</h2>
+            
+            <h3>5.1.</h3>
+            <p>Clientul/Cumpărătorul poate efectua Comenzi pe Site, prin transmiterea unui mesaj din contul de client către reclamepepaine.ro.</p>
+            
+            <h3>5.2.</h3>
+            <p>Prin transmiterea Comenzii, Cumpărătorul consimte ca toate datele furnizate de acesta, necesare procesului de cumpărare, sunt corecte, complete și adevărate la data plasării Comenzii.</p>
+            
+            <h3>5.3.</h3>
+            <p>Prin transmiterea Comenzii, Cumpărătorul consimte ca Prestatorul poate să îl contacteze, prin orice mijloc disponibil/agreat de Prestator, în orice situație în care este necesară contactarea Cumpărătorului.</p>
+            
+            <h3>5.4.</h3>
+            <p>Prestatorul poate anula Comanda efectuată de către Cumpărător, în urma unei notificări prealabile adresate Cumpărătorului, fără nicio obligație ulterioară a vreunei părți față de cealaltă sau fără ca vreo parte să poată să pretindă celeilalte daune-interese în următoarele cazuri:</p>
+            <ul>
+                <li>5.4.1. neacceptarea de către banca emitentă a cardului Cumpărătorului a tranzacției, în cazul plății online;</li>
+                <li>5.4.2. invalidarea tranzacției de către procesatorul de carduri agreat de reclamepepaine.ro, în cazul plății online;</li>
+                <li>5.4.3. datele furnizate de către Client/Cumpărător, pe Site sunt incomplete și/sau incorecte;</li>
+            </ul>
+            
+            <h3>5.5.</h3>
+            <p>În cazul încheierii contractului prin mijloace de comunicare la distanță, Cumpărătorul persoană fizică are dreptul să se retragă din Contract, respectiv să renunțe la un Serviciu, în termen de 14 zile calendaristice, fără invocarea niciunui motiv și fără a suporta alte costuri. Astfel, potrivit OUG nr. 34/2014, perioada de renunțare la un Serviciu expiră în termen de 14 zile de la data încheierii contractului.</p>
+            
+            <h3>5.6.</h3>
+            <p>În cazul în care Cumpărătorul persoană fizică decide să se retragă din Contract, acesta va putea completa un formular sau va face o cerere de returnare departamentului de relații cu clienții al DOUBLE INCOME SRL.</p>
+            
+            <h3>5.7.</h3>
+            <p>În cazul în care Clientul/Cumpărătorul solicită retragerea din Contract în cadrul termenului legal de retragere din contract, trebuie să returneze și eventualele cadouri care au însoțit produsul/serviciul respectiv. În cazul în care Comanda este achitată, Prestatorul va rambursa suma în maxim 14 (paisprezece) zile de la data informării Prestatorului de către Cumpărător asupra deciziei sale de retragere din Contract. Suma va fi returnată după cum urmează:</p>
+            <ul>
+                <li>5.7.1. pentru Comenzile achitate cu card online -> prin restituire în contul din care a fost efectuată plata sau prin generarea unui voucher cu valoarea produsului returnat;</li>
+                <li>5.7.2. pentru Comenzile achitate cu Op/ramburs/iTransfer/Card bancar -> prin virament bancar sau prin generarea unui voucher cu valoarea produsului returnat;</li>
+                <li>5.7.3. pentru Comenzile achitate cu numerar sau card bancar la sediu -> prin restituire numerar, prin restituirea contravalorii serviciului în contul bancar transmis de client sau prin generarea unui voucher cu valoarea produsului returnat.</li>
+            </ul>
+            
+            <h3>5.8.</h3>
+            <p>Dacă Serviciul a fost prestat la solicitarea expresă a Clientului, contravaloarea acestuia nu va mai fi returnată, conform dispozițiilor Art. 16 din OUG nr. 34 / 2014.</p>
+            
+            <h3>5.9.</h3>
+            <p>În cazul în care un Serviciu comandat de către Cumpărător, nu poate fi livrat de către Prestator, acesta din urmă va informa Clientul/Cumpărătorul asupra acestui fapt și va returna în contul Cumpărătorului contravaloarea Bunului și/sau Serviciului, în termen de maxim 7 (șapte) zile de la data la care Prestatorul a luat la cunoștință acest fapt sau de la data la care Cumpărătorul și-a exprimat în mod expres intenția de reziliere a Contractului.</p>
+        </section>
+
+        <section>
+            <h2>CONFIDENȚIALITATE</h2>
+            
+            <h3>6.1.</h3>
+            <p>DOUBLE INCOME SRL se angajează să păstreze confidențialitatea tuturor informațiilor pe care le furnizați. Dezvăluirea acestora va fi permisă doar conform termenilor din prezentul document și în politica de confidențialitate publicată pe reclamepepaine.ro.</p>
+            
+            <h3>6.2.</h3>
+            <p>Niciun comentariu public, promovare, comunicat de presă sau altă formă de dezvăluire către terțe părți nu va fi făcut de Cumpărător/Client privind Comanda/Contractul fără acordul scris prealabil al Prestatorului.</p>
+            
+            <h3>6.3.</h3>
+            <p>Prin transmiterea de informații sau materiale pe acest site, acordați Prestatorului dreptul de a le utiliza în mod irevocabil, inclusiv pentru a le reproduce, afișa, modifica, transmite și distribui. De asemenea, sunteți de acord ca Prestatorul să folosească aceste informații, idei, concepte, know-how-uri sau tehnici, conform intereselor sale. DOUBLE INCOME SRL nu va fi obligat să păstreze confidențialitatea acestor informații, cu excepția cazului în care legislația în vigoare impune altceva.</p>
+        </section>
+
+        <section>
+            <h2>COMUNICĂRI COMERCIALE</h2>
+            
+            <h3>7.1.</h3>
+            <p>Cumpărătorul/Utilizatorul/Clientul are posibilitatea de a schimba în orice moment decizia dată Prestatorului privind primirea Comunicării Comerciale care conține informații generale și specifice, inclusiv despre oferte și promoții. Acest lucru poate fi realizat astfel:</p>
+            <ul>
+                <li>7.1.2. prin ajustarea setărilor din cont;</li>
+                <li>7.1.3. prin accesarea link-ului de dezabonare din Comunicările Comerciale primite de la Prestator;</li>
+                <li>7.1.4. prin contactarea directă a Prestatorului.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>FACTURARE – PLATA</h2>
+            
+            <h3>8.1.</h3>
+            <p>Prețurile pentru Produse și Servicii, afișate pe reclamepepainbe.ro, includ TVA conform reglementărilor fiscale în vigoare.</p>
+            
+            <h3>8.2.</h3>
+            <p>Prețul, modalitatea de plată și termenul de plată vor fi stabilite de comun acord cu fiecare client printr-un contract scris. Prestatorul va emite o factură pentru serviciile prestate, iar Cumpărătorul are obligația de a furniza informațiile necesare pentru emiterea facturii conform legii.</p>
+            
+            <h3>8.3.</h3>
+            <p>Pentru a asigura corectitudinea emiterii facturii, Cumpărătorul are obligația de a actualiza datele din cont ori de câte ori este necesar și de a accesa informațiile și documentele relevante pentru fiecare comandă, disponibile în cont.</p>
+            
+            <h3>8.4.</h3>
+            <p>Prin plasarea Comenzii, Cumpărătorul își dă acordul pentru primirea facturilor în format electronic, prin încărcarea acestora în cont de către DOUBLE INCOME SRL sau prin e-mail la adresa indicată în cont</p>
+        </section>
+
+        <section>
+            <h2>PRESTAREA SERVICIILOR ACHIZITIONATE PE SITE</h2>
+            
+            <h3>9.1.</h3>
+            <p>Prestatorul va oferi toate serviciile prevăzute în contractul scris încheiat cu fiecare Client/Cumparator, respectând termenele și condițiile stipulate.</p>
+        </section>
+
+        <section>
+            <h2>RĂSPUNDERE</h2>
+            
+            <h3>10.1.</h3>
+            <p>Prestatorul nu va fi răspunzător pentru daunele de orice fel pe care Cumparatorul sau orice altă terță parte le-ar putea suferi ca urmare a îndeplinirii de către Prestator a obligațiilor sale conform Comenzii. Răspunderea părților va fi reglementată de contractul scris încheiat înainte de începerea prestării serviciilor.</p>
+            
+            <h3>10.2.</h3>
+            <p>Prin crearea și utilizarea Contului, Utilizatorul/Cumparatorul își asumă responsabilitatea pentru păstrarea confidențialității datelor de acces (utilizator și parolă) și pentru gestionarea accesului la Contul său. În măsura în care legea permite, Utilizatorul/Cumparatorul va fi responsabil de activitatea desfășurată prin intermediul Contului său.</p>
+            
+            <h3>10.3.</h3>
+            <p>Prin crearea Contului, utilizarea conținutului și/sau plasarea comenzilor, Clientul/Utilizatorul/Cumparatorul acceptă în mod clar și neechivoc Termenii și Condițiile Site-ului în ultima versiune disponibilă pe Site, la data creării Contului și/sau utilizării conținutului și/sau plasării Comenzii.</p>
+            
+            <h3>10.4.</h3>
+            <p>Prestatorul își rezervă dreptul de a actualiza și modifica periodic Termenii și Condițiile Site-ului pentru a reflecta orice schimbări în modul de funcționare al Site-ului sau orice modificări ale cerințelor legale. Aceste modificări vor fi valabile de la momentul afișării lor pe Site. În cazul unor astfel de modificări, versiunea actualizată a documentului va fi publicată pe Site, de aceea vă rugăm să verificați periodic conținutul acestui document.</p>
+        </section>
+
+        <section>
+            <h2>PRELUCRAREA DATELOR CU CARACTER PERSONAL</h2>
+            
+            <h3>11.1.</h3>
+            <p>Vă rugăm să citiți Politica de Confidențialitate referitoare la prelucrarea datelor cu caracter personal, disponibilă pe site-ul reclamepepaine.ro și care face parte integrantă din acest document.</p>
+        </section>
+
+        <section>
+            <h2>FOLOSIREA COOKIE-URILOR</h2>
+            
+            <h3>12.1.</h3>
+            <p>Vezi Politica de cookies, care face parte din prezentul document.</p>
+        </section>
+
+        <section>
+            <h2>FORȚA MAJORĂ</h2>
+            
+            <h3>13.1.</h3>
+            <p>Nicio parte nu va fi responsabilă pentru neexecutarea obligațiilor sale contractuale, dacă aceasta este cauzată de un eveniment de forță majoră. Forța majoră se referă la un eveniment imprevizibil, în afara controlului părților și care nu poate fi evitat.</p>
+            
+            <h3>13.2.</h3>
+            <p>Dacă, în termen de 15 (cincisprezece) zile de la data producerii evenimentului, acesta nu încetează, fiecare parte va avea dreptul să notifice celeilalte părți încetarea de plin drept a contractului, fără ca vreuna dintre ele să poată solicita daune-interese.</p>
+        </section>
+
+        <section>
+            <h2>LEGEA APLICABILĂ – JURISDICȚIA</h2>
+            
+            <h3>14.1.</h3>
+            <p>Prezentul contract este guvernat de legea română. Orice litigii apărute între Prestator și Utilizatori / Cumparatori vor fi rezolvate pe cale amiabilă sau, în cazul în care acest lucru nu va fi posibil, litigiile vor fi soluționate de instanțele judecătorești române competente din Municipiul București.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-background-text">@reclame.pe.paine</div>
+        
+        <div class="footer-content">
+            <nav class="legal-links">
+                <a href="termeni-si-conditii.html">Termeni și Condiții</a>
+                <a href="politica-cookies.html">Politica Cookies</a>
+                <a href="gdpr.html">GDPR</a>
+            </nav>
+
+            <div class="copyright">
+                Copyright © 2025 Reclame Pe Paine | Toate drepturile sunt rezervate
+            </div>
+
+            <div class="anpc-buttons">
+                <a href="https://solutii.online.anpc.ro" class="anpc-button" target="_blank">
+                    <i class="fas fa-balance-scale"></i>
+                    Soluționarea Alternativă a Litigiilor
+                </a>
+                
+                <a href="https://webgate.ec.europa.eu/odr" class="anpc-button" target="_blank">
+                    <i class="fas fa-globe"></i>
+                    Soluționarea Online a Litigiilor
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>

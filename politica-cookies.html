@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politica cookies - Reclame pe Pâine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+    
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+    
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 50px;
+            background-color: #ffffff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+    
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+    
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+    
+        .contact-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        .footer {
+            position: relative;
+            background: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+        }
+    
+        .footer-background-text {
+            font-size: 4rem;
+            color: #f5f5f5;
+            margin-bottom: 30px;
+            letter-spacing: -3px;
+            position: relative;
+            z-index: 1;
+        }
+    
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+    
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+    
+        .legal-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+    
+        .legal-links a:hover {
+            color: #FFA500;
+        }
+    
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+            margin: 20px 0;
+        }
+    
+        .anpc-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+    
+        .anpc-button {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+    
+        .anpc-button:hover {
+            border-color: #FFA500;
+            box-shadow: 0 2px 8px rgba(255,165,0,0.1);
+            transform: translateY(-2px);
+        }
+    
+        .anpc-button i {
+            font-size: 1.2rem;
+        }
+    
+        .terms-content {
+            padding: 120px 20px 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    
+        .terms-content h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    
+        .terms-content h2 {
+            font-size: 1.8rem;
+            color: #4CAF50;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+    
+        .terms-content h3 {
+            font-size: 1.4rem;
+            color: #666;
+            margin: 30px 0 15px;
+        }
+    
+        .terms-content p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+    
+        .terms-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+    
+        .terms-content li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+    
+        /* Mobile Styles */
+        @media (max-width: 991px) {
+            header {
+                padding: 8px 15px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+    
+            .logo {
+                gap: 8px;
+            }
+    
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+    
+            .logo h2 {
+                font-size: 1rem;
+                white-space: nowrap;
+                overflow: visible;
+                text-overflow: clip;
+                max-width: none;
+            }
+    
+            .contact-btn {
+                padding: 8px 15px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                white-space: nowrap;
+                font-weight: 600;
+                flex-shrink: 0;
+            }
+    
+            .footer {
+                padding: 40px 15px 30px;
+            }
+    
+            .footer-background-text {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                letter-spacing: -2px;
+            }
+    
+            .legal-links {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+    
+            .legal-links a {
+                font-size: 0.85rem;
+            }
+    
+            .copyright {
+                font-size: 0.8rem;
+                margin: 15px 0;
+            }
+    
+            .anpc-buttons {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 20px;
+            }
+    
+            .anpc-button {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+                justify-content: center;
+                gap: 8px;
+            }
+    
+            .anpc-button i {
+                font-size: 1rem;
+            }
+    
+            .terms-content {
+                padding: 100px 15px 40px;
+            }
+    
+            .terms-content h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+    
+            .terms-content h2 {
+                font-size: 1.5rem;
+                margin: 30px 0 15px;
+            }
+    
+            .terms-content h3 {
+                font-size: 1.2rem;
+                margin: 25px 0 12px;
+            }
+    
+            .terms-content p {
+                font-size: 0.95rem;
+            }
+        }
+    
+        /* Tablet Styles */
+        @media (max-width: 768px) {
+            .footer-background-text {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <h2>Reclame pe Pâine</h2>
+        </a>
+        <a href="https://reclamepepaine.ro" class="contact-btn">Contactează-ne</a>    </header>
+
+    <main class="terms-content">
+        <h1>Politica cookies</h1>
+        
+        <section>
+            <h2>Politica privind utilizarea cookie-urilor și tehnologiilor similare</h2>
+            
+            <p>Această politică se aplică utilizării cookie-urilor și tehnologiilor similare pe website-urile și aplicațiile gestionate de DOUBLE INCOME SRL, cu sediul în judetul Buzau, Sat Margariti, Comuna Beceni, Strada Principala M., Nr. 26, înregistrată la Oficiul Registrului Comerțului, având CUI: 51113195.</p>
+            
+            <p>Cookie-urile sunt utilizate pentru următoarele scopuri:</p>
+            <ul>
+                <li>pentru asigurarea funcționării corecte a site-ului,</li>
+                <li>pentru analiza comportamentului vizitatorilor site-ului,</li>
+                <li>pentru publicitate.</li>
+            </ul>
+            
+            <p>Această politică este completată de politica DOUBLE INCOME SRL privind protecția datelor personale și de Termenii și Condițiile site-ului, care vă recomandăm să le parcurgeți. Acestea conțin informații suplimentare utile, inclusiv detalii despre responsabilul DOUBLE INCOME SRL în protecția datelor personale, scopurile prelucrării acestora de către companie, drepturile dumneavoastră, precum și excepțiile și limitele acestora.</p>
+            
+            <p>Protecția adecvată a datelor personale reprezintă un obiectiv esențial pentru DOUBLE INCOME SRL. Dorim să fim cât mai transparenți și clari. Dacă aveți întrebări, nu ezitați să ne contactați.</p>
+        </section>
+
+        <section>
+            <h2>Ce sunt cookie-urile?</h2>
+            
+            <p>Un cookie este un fișier mic, format din litere și numere, care este salvat pe computerul, telefonul mobil sau alte dispozitive ale unui utilizator care accesează internetul. Acest fișier este plasat printr-o cerere trimisă de dispozitivul utilizatorului către un server propriu sau al unei terțe părți.</p>
+        </section>
+
+        <section>
+            <h2>La ce sunt folosite cookie-urile?</h2>
+            
+            <p>Aceste fișiere permit, în principal, recunoașterea dispozitivului utilizatorului și afișarea unui conținut relevant, adaptat preferințelor acestuia.</p>
+            
+            <p>Cookie-urile contribuie la o experiență de navigare plăcută și susțin eforturile noastre de a oferi servicii mai personalizate, cum ar fi setările de confidențialitate online, coșul de cumpărături sau publicitatea relevantă. De asemenea, ele sunt utilizate pentru a crea statistici anonime, care ne ajută să înțelegem cum interacționează utilizatorii cu paginile noastre și să îmbunătățim structura și conținutul acestora, fără a identifica utilizatorii personal.</p>
+        </section>
+
+        <section>
+            <h2>Ce cookie-uri folosim?</h2>
+            
+            <p>Utilizăm două tipuri de cookie-uri: per sesiune și fixe. Cookie-urile per sesiune sunt fișiere temporare care rămân pe dispozitivul utilizatorului până la încheierea sesiunii sau închiderea aplicației. Cookie-urile fixe rămân pe terminalul utilizatorului pentru o perioadă stabilită de parametrii cookie-ului sau până sunt șterse manual de utilizator.</p>
+        </section>
+
+        <section>
+            <h2>Cum sunt folosite cookie-urile de către acest site?</h2>
+            
+            <p>O vizită pe acest site poate plasa următoarele tipuri de cookie-uri:</p>
+            <ul>
+                <li>cookie-uri strict necesare pentru funcționarea site-ului</li>
+                <li>cookie-uri de analiză</li>
+                <li>cookie-uri pentru publicitate</li>
+            </ul>
+            
+            <p>Cookie-urile strict necesare sunt esențiale pentru buna funcționare a site-ului și sunt setate pe dispozitivul dumneavoastră la accesarea site-ului sau ca urmare a acțiunilor efectuate pe site. Puteți seta browser-ul să blocheze cookie-urile, însă, în acest caz, anumite secțiuni ale site-ului nu vor funcționa corect.</p>
+        </section>
+
+        <section>
+            <h2>Conțin cookie-urile sau tehnologiile similare date personale?</h2>
+            
+            <p>Cookie-urile sau tehnologiile similare, de obicei, nu solicită informații cu caracter personal pentru a funcționa și, în multe cazuri, nu identifică personal utilizatorii de internet. Totuși, există situații în care datele personale pot fi colectate prin utilizarea cookie-urilor, pentru a facilita anumite funcționalități sau pentru a oferi o experiență mai personalizate utilizatorului. Aceste date sunt criptate într-un mod care face imposibil accesul persoanelor neautorizate la ele.</p>
+        </section>
+
+        <section>
+            <h2>Ce sunt tehnologiile similare?</h2>
+            <p>Există și alte tehnologii care pot fi utilizate în aceleași scopuri ca și cookie-urile.</p>
+        </section>
+
+        <section>
+            <h2>Blocarea cookie-urilor</h2>
+            
+            <p>Dacă doriți să blocați cookie-urile, unele funcționalități ale site-ului vor fi dezactivate, iar acest lucru poate duce la erori sau disfuncționalități în utilizarea site-ului nostru. De exemplu, blocarea cookie-urilor ar putea să vă împiedice să:</p>
+            <ul>
+                <li>cumpărați produse online</li>
+                <li>vă autentificați în contul dumneavoastră</li>
+            </ul>
+            
+            <p>Dacă sunteți de acord cu aceste limitări și doriți să blocați cookie-urile, urmați pașii de mai jos:</p>
+            
+            <p>Majoritatea browserelor sunt setate implicit să accepte cookie-uri, dar aveți posibilitatea de a modifica setările pentru a bloca unele sau toate cookie-urile.</p>
+        </section>
+
+        <section>
+            <h2>Administrarea preferințelor pentru cookie-uri</h2>
+            
+            <p>În mod general, aplicațiile folosite pentru accesarea paginilor web permit salvarea automată a cookie-urilor și/sau a tehnologiilor similare pe terminalul utilizatorului. Aceste setări pot fi modificate pentru a bloca administrarea automată a cookie-urilor de către browser-ul web sau pentru a informa utilizatorul de fiecare dată când un cookie este trimis către terminalul său.</p>
+            
+            <p>Pentru informații detaliate despre cum să gestionați cookie-urile, verificați secțiunea de setări a aplicației (browser-ului web). Limita utilizării cookie-urilor poate afecta anumite funcționalități ale site-ului.</p>
+        </section>
+
+        <section>
+            <h2>De ce sunt cookie-urile și/sau tehnologiile similare importante pentru Internet?</h2>
+            
+            <p>Cookie-urile și tehnologiile similare sunt esențiale pentru funcționarea eficientă a Internetului, deoarece ajută la crearea unei experiențe de navigare plăcute și personalizate în funcție de preferințele și interesele fiecărui utilizator. Dacă refuzați sau dezactivați cookie-urile, unele site-uri sau părți din acestea ar putea deveni inaccesibile.</p>
+            
+            <p>Dezactivarea cookie-urilor nu înseamnă că nu veți mai primi publicitate online, dar aceasta nu va mai putea fi personalizată pe baza comportamentului dvs. de navigare.</p>
+            
+            <p>Exemple de utilizări importante ale cookie-urilor (fără necesitatea autentificării utilizatorului):</p>
+            <ul>
+                <li>Adaptarea conținutului și serviciilor la preferințele utilizatorului (ex: categorii de produse și servicii).</li>
+                <li>Oferirea de oferte personalizate în funcție de interesele utilizatorilor.</li>
+                <li>Reținerea parolelor și a altor informații de autentificare.</li>
+                <li>Protecția copiilor prin opțiuni de filtrare a conținutului (ex: mod familial, safe search).</li>
+                <li>Limitarea frecvenței de afișare a reclamelor – pentru a nu deranja utilizatorul cu aceleași reclame.</li>
+                <li>Furnizarea de publicitate relevantă pentru utilizatori.</li>
+                <li>Măsurarea și optimizarea traficului pe site-uri, înțelegerea tipurilor de conținut accesate și a modului în care utilizatorii ajung pe site (de exemplu, prin motoare de căutare, direct sau din alte site-uri). Aceste analize ajută la îmbunătățirea serviciilor oferite utilizatorilor.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Securitate și aspecte legate de confidențialitate</h2>
+            
+            <p>În general, majoritatea browserelor au setări de confidențialitate care permit utilizatorilor să aleagă diferite nivele de acceptare a cookie-urilor, perioada de valabilitate a acestora și ștergerea automată a acestora după vizitarea unui site.</p>
+            
+            <p>Alte aspecte de securitate legate de cookie-uri:</p>
+            <ul>
+                <li>Personalizarea setărilor browser-ului pentru cookie-uri în funcție de nivelul de securitate dorit.</li>
+                <li>Dacă sunteți singura persoană care folosește computerul, aveți posibilitatea să setați termene lungi de expirare pentru stocarea istoricului de navigare și a datelor personale.</li>
+                <li>Dacă partajați computerul cu alți utilizatori, puteți configura browserul pentru a șterge automat datele de navigare de fiecare dată când închideți sesiunea. Astfel, se poate accesa site-urile care plasează cookie-uri și se va șterge orice informație de vizitare la închiderea browser-ului.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Linkuri și informații suplimentare utile</h2>
+            
+            <p>Dacă doriți să aflați mai multe informații despre cookie-uri și utilizarea acestora, vă recomandăm următoarele linkuri:</p>
+            <ul>
+               <li> <a href="https://allaboutcookies.org/">Ghidul Microsoft despre cookie-uri</a> </li>
+                <li> <a href="https://support.microsoft.com/en-us/topic/description-of-cookies-ad01aa7e-66c9-8ab2-7898-6652c100999d">All About Cookies</a> </li>
+                <li> <a href="https://www.youronlinechoices.com/ro/">https://www.youronlinechoices.com/ro/</a></li>
+            </ul>
+            
+            <p>DOUBLE INCOME SRL utilizează servicii furnizate de terțe părți pentru a oferi funcționalități, pentru analiză și pentru publicitate.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-background-text">@reclame.pe.paine</div>
+        
+        <div class="footer-content">
+            <nav class="legal-links">
+                <a href="termeni-si-conditii.html">Termeni și Condiții</a>
+                <a href="politica-cookies.html">Politica Cookies</a>
+                <a href="gdpr.html">GDPR</a>
+            </nav>
+
+            <div class="copyright">
+                Copyright © 2025 Reclame Pe Paine | Toate drepturile sunt rezervate
+            </div>
+
+            <div class="anpc-buttons">
+                <a href="https://solutii.online.anpc.ro" class="anpc-button" target="_blank">
+                    <i class="fas fa-balance-scale"></i>
+                    Soluționarea Alternativă a Litigiilor
+                </a>
+                
+                <a href="https://webgate.ec.europa.eu/odr" class="anpc-button" target="_blank">
+                    <i class="fas fa-globe"></i>
+                    Soluționarea Online a Litigiilor
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>

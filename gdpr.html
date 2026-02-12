@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPR - Reclame pe Pâine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+    
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+    
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 50px;
+            background-color: #ffffff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+    
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+    
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+    
+        .contact-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        .footer {
+            position: relative;
+            background: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+        }
+    
+        .footer-background-text {
+            font-size: 4rem;
+            color: #f5f5f5;
+            margin-bottom: 30px;
+            letter-spacing: -3px;
+            position: relative;
+            z-index: 1;
+        }
+    
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+    
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+    
+        .legal-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+    
+        .legal-links a:hover {
+            color: #FFA500;
+        }
+    
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+            margin: 20px 0;
+        }
+    
+        .anpc-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+    
+        .anpc-button {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+    
+        .anpc-button:hover {
+            border-color: #FFA500;
+            box-shadow: 0 2px 8px rgba(255,165,0,0.1);
+            transform: translateY(-2px);
+        }
+    
+        .anpc-button i {
+            font-size: 1.2rem;
+        }
+    
+        .terms-content {
+            padding: 120px 20px 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    
+        .terms-content h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    
+        .terms-content h2 {
+            font-size: 1.8rem;
+            color: #4CAF50;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+    
+        .terms-content h3 {
+            font-size: 1.4rem;
+            color: #666;
+            margin: 30px 0 15px;
+        }
+    
+        .terms-content p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+    
+        .terms-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+    
+        .terms-content li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+    
+        /* Mobile Styles */
+        @media (max-width: 991px) {
+            header {
+                padding: 8px 15px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+    
+            .logo {
+                gap: 8px;
+            }
+    
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+    
+            .logo h2 {
+                font-size: 1rem;
+                white-space: nowrap;
+                overflow: visible;
+                text-overflow: clip;
+                max-width: none;
+            }
+    
+            .contact-btn {
+                padding: 8px 15px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                white-space: nowrap;
+                font-weight: 600;
+                flex-shrink: 0;
+            }
+    
+            .footer {
+                padding: 40px 15px 30px;
+            }
+    
+            .footer-background-text {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                letter-spacing: -2px;
+            }
+    
+            .legal-links {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+    
+            .legal-links a {
+                font-size: 0.85rem;
+            }
+    
+            .copyright {
+                font-size: 0.8rem;
+                margin: 15px 0;
+            }
+    
+            .anpc-buttons {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 20px;
+            }
+    
+            .anpc-button {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+                justify-content: center;
+                gap: 8px;
+            }
+    
+            .anpc-button i {
+                font-size: 1rem;
+            }
+    
+            .terms-content {
+                padding: 100px 15px 40px;
+            }
+    
+            .terms-content h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+    
+            .terms-content h2 {
+                font-size: 1.5rem;
+                margin: 30px 0 15px;
+            }
+    
+            .terms-content h3 {
+                font-size: 1.2rem;
+                margin: 25px 0 12px;
+            }
+    
+            .terms-content p {
+                font-size: 0.95rem;
+            }
+        }
+    
+        /* Tablet Styles */
+        @media (max-width: 768px) {
+            .footer-background-text {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <h2>Reclame pe Pâine</h2>
+        </a>
+        <a href="https://reclamepepaine.ro" class="contact-btn">Contactează-ne</a>
+        </header>
+
+    <main class="terms-content">
+        <h1>GDPR</h1>
+        
+        <section>
+            <h2>Politica de Confidențialitate</h2>
+            <h3>Politica de confidențialitate privind prelucrarea datelor cu caracter personal</h3>
+            
+            <p>Protejarea dreptului la confidențialitatea datelor personale este o prioritate pentru noi. De aceea, ne angajăm să prelucrăm datele dumneavoastră în conformitate cu Regulamentul (UE) 2016/679 („Regulamentul general privind protecția datelor” sau „GDPR”) și cu orice altă legislație aplicabilă în România. Având în vedere că transparența este un principiu esențial al acestui cadru legal, am întocmit acest document pentru a vă informa despre modul în care colectăm, utilizăm, transferăm și protejăm datele dumneavoastră personale atunci când interacționați cu noi prin produsele și serviciile noastre, inclusiv prin site-ul nostru web și aplicațiile mobile.</p>
+            
+            <p>Ne rezervăm dreptul de a actualiza această Politică de Confidențialitate periodic, pentru a reflecta orice modificări în modul în care prelucrăm datele personale sau orice schimbări legislative. Orice modificare va fi afișată pe site-ul nostru, așadar vă recomandăm să verificați regulat politica noastră.</p>
+        </section>
+
+        <section>
+            <h2>DOUBLE INCOME S.R.L.</h2>
+            <h3>Cine suntem și cum ne puteți contacta</h3>
+            
+            <p>Site-ul web reclamepepaine.ro aparține societății DOUBLE INCOME S.R.L., cu sediul în județul Buzău, Sat Măgărăiți, Comuna Beceni, Strada Principală M., Nr. 26. Este înregistrată la Oficiul Registrului Comerțului, având C.U.I.: 51113195 (denumită în continuare „DOUBLE INCOME” sau „noi”). În conformitate cu legislația privind protecția datelor, suntem operatori atunci când prelucrăm datele dumneavoastră personale.</p>
+            
+            <p>Fiind mereu deschiși să primim opiniile dumneavoastră și să vă oferim informațiile suplimentare de care aveți nevoie cu privire la prelucrarea datelor, vă încurajăm să contactați Responsabilul nostru cu protecția datelor la adresa de e-mail: reclamepepaine@gmail.com.</p>
+        </section>
+
+        <section>
+            <h2>Ce categorii de date cu caracter personal prelucrăm</h2>
+            
+            <p>În general, colectăm datele dumneavoastră cu caracter personal direct de la dumneavoastră, astfel încât aveți controlul asupra tipului de informație pe care ni-o oferiți. De exemplu, primim informații de la dumneavoastră în următoarele situații:</p>
+            
+            <ul>
+                <li>Când vă creați un cont pe site-ul reclamepepaine.ro, ne transmiteți: adresa de e-mail, numele și prenumele.</li>
+                <li>În cadrul paginii dvs. personale (Contul meu) de pe platforma reclamepepaine.ro aveți posibilitatea să adăugați informații suplimentare, precum: număr de telefon mobil, număr telefon fix, adrese de livrare, adresa alternativă de e-mail, etc.</li>
+                <li>Când plasați o comandă, ne furnizați informații precum: serviciul dorit, numele și prenumele, adresa de livrare, detalii de facturare, metoda de plată, număr de telefon, etc.</li>
+            </ul>
+            
+            <p>De asemenea, putem colecta și prelucra ulterior anumite informații privind comportamentul dumneavoastră în timpul vizitării site-ului nostru web sau al utilizării aplicației smartphone, pentru a personaliza experiența online și a vă pune la dispoziție oferte adaptate profilului dumneavoastră. Vă invităm să aflați mai multe detalii consultând secțiunea privind scopurile prelucrării de mai jos.</p>
+            
+            <p>Pe site-ul nostru web și în aplicația smartphone putem stoca și colecta informații prin cookie-uri și tehnologii similare, conform Politicii de cookie-uri.</p>
+            
+            <p>Nu colectăm și nu prelucrăm date sensibile, așa cum sunt definite în Regulamentul general privind protecția datelor, și nu dorim să colectăm sau să prelucrăm datele minorilor care nu au împlinit vârsta de 18 ani.</p>
+        </section>
+
+        <section>
+            <h2>Care sunt scopurile și temeiurile prelucrării</h2>
+            
+            <p>Vom utiliza datele dumneavoastră cu caracter personal în următoarele scopuri:</p>
+            
+            <h3>Pentru prestarea serviciilor reclamepepaine.ro în beneficiul dumneavoastră</h3>
+            <p>Acest scop general poate include, după caz, următoarele activități:</p>
+            <ul>
+                <li>Crearea și administrarea contului pe platforma reclamepepaine.ro;</li>
+                <li>Prelucrarea comenzilor, inclusiv preluarea, validarea, expedierea și facturarea acestora;</li>
+                <li>Soluționarea anulărilor sau a problemelor de orice natură referitoare la o comandă sau la serviciile achiziționate;</li>
+                <li>Asigurarea serviciilor de suport, inclusiv oferirea de răspunsuri la întrebările dumneavoastră referitoare la comenzile efectuate sau la serviciile prestate de reclamepepaine.ro.</li>
+            </ul>
+            
+            <p>Prelucrarea datelor dumneavoastră pentru aceste scopuri este, în majoritatea cazurilor, necesară pentru încheierea și executarea unui contract între reclamepepaine.ro și dumneavoastră. De asemenea, anumite prelucrări subsumate acestor scopuri sunt impuse de legislația aplicabilă, inclusiv legislația fiscală și contabilă.</p>
+            
+            <h3>Pentru îmbunătățirea serviciilor noastre</h3>
+            <p>Ne dorim să vă oferim întotdeauna cea mai bună experiență de cumpărare online. În acest sens, putem colecta și utiliza anumite informații referitoare la comportamentul dumneavoastră de cumpărător, vă putem invita să completați chestionare de satisfacție după finalizarea unei comenzi sau putem desfășura, direct sau cu ajutorul unor parteneri, studii și cercetări de piață.</p>
+            
+            <p>Ne bazăm pe interesul nostru legitim de a desfășura activități comerciale, având întotdeauna grijă ca drepturile și libertățile dumneavoastră fundamentale să nu fie afectate.</p>
+            
+            <h3>Pentru marketing</h3>
+            <p>Vrem să vă ținem la curent cu privire la cele mai bune oferte pentru produsele/serviciile care vă interesează. În acest sens, vă putem trimite orice tip de mesaj (cum ar fi: e-mail/SMS/telefonic/mobile push/webpush/etc.) conținând informații generale și tematice, informații despre servicii similare sau complementare celor pe care le-ați achiziționat, oferte sau promoții, precum și alte comunicări comerciale cum ar fi cercetări de piață și sondaje de opinie. De asemenea, putem afișa recomandări personalizate pe site-ul web și în aplicația mobilă. Pentru a vă oferi informații relevante, putem utiliza anumite date despre comportamentul dumneavoastră de cumpărător (de exemplu, serviciile vizualizate/achiziționate) pentru a crea un profil personalizat.</p>
+            
+            <p>În majoritatea cazurilor, ne întemeiem comunicările de marketing pe consimțământul dumneavoastră prealabil. Puteți retrage consimțământul în orice moment prin:</p>
+            <ul>
+                <li>Accesarea link-ului de dezabonare afișat în cadrul mesajelor pe care le primiți de la noi; sau prin</li>
+                <li>Contactarea reclamepepaine.ro utilizând detaliile de contact descrise mai sus.</li>
+            </ul>
+            
+            <p>În anumite situații, ne putem baza pe interesul nostru legitim de a ne promova și dezvolta activitatea comercială. În aceste cazuri, avem grijă să protejăm drepturile și libertățile dumneavoastră fundamentale. Cu toate acestea, aveți posibilitatea de a solicita oricând, prin mijloacele descrise mai sus, oprirea prelucrării datelor dumneavoastră în scop de marketing.</p>
+            
+            <h3>Pentru apărarea intereselor noastre legitime</h3>
+            <p>În anumite situații, vom folosi sau transmite informații pentru a ne proteja drepturile și activitatea comercială. Acestea pot include:</p>
+            <ul>
+                <li>Măsuri de protecție a site-ului web și a utilizatorilor platformei reclamepepaine.ro față de atacuri cibernetice;</li>
+                <li>Măsuri de prevenire și detectare a tentativelor de fraudă, inclusiv transmiterea unor informații către autoritățile publice competente;</li>
+                <li>Măsuri de gestionare a altor riscuri.</li>
+            </ul>
+            
+            <p>Temeiul general al acestor tipuri de prelucrări este interesul nostru legitim de a ne apăra activitatea comercială, având grijă să asigurăm un echilibru între interesele noastre și drepturile și libertățile dumneavoastră fundamentale.</p>
+            
+            <p>În anumite cazuri, ne întemeiem prelucrarea și pe dispoziții legale, cum ar fi obligația de a asigura paza bunurilor și valorilor, prevăzută de legislația aplicabilă.</p>
+        </section>
+
+        <section>
+            <h2>Cât timp păstrăm datele dvs. cu caracter personal</h2>
+            
+            <p>În general, vom stoca datele dvs. cu caracter personal cât timp aveți un cont în platforma reclamepepaine.ro. Puteți solicita oricând ștergerea anumitor informații sau închiderea contului, iar noi vom răspunde acestor solicitări. Totuși, este posibil ca unele informații să fie păstrate și după închiderea contului, în cazul în care legislația aplicabilă sau interesele noastre legitime impun acest lucru.</p>
+        </section>
+
+        <section>
+            <h2>Cui transmitem datele dvs. cu caracter personal</h2>
+            
+            <p>În anumite cazuri, putem transmite sau oferi acces la anumite date cu caracter personal către următoarele categorii de destinatari:</p>
+            
+            <ul>
+                <li>Furnizorilor de servicii de curierat</li>
+                <li>Furnizorilor de servicii de plată/bancare</li>
+                <li>Furnizorilor de servicii financiar-contabile</li>
+                <li>Furnizorilor de servicii juridice</li>
+                <li>Furnizorilor de servicii de marketing/telemarketing</li>
+                <li>Furnizorilor de servicii de cercetare de piață</li>
+                <li>Societăților de asigurare</li>
+                <li>Furnizorilor de servicii IT</li>
+                <li>Alte societăți cu care dezvoltăm programe comune pentru oferirea de produse și servicii pe piață.</li>
+            </ul>
+            
+            <p>În situațiile în care avem o obligație legală sau pentru a ne proteja un interes legitim, putem transmite anumite date cu caracter personal autorităților publice competente.</p>
+            
+            <p>Ne asigurăm că accesul la datele dvs. de către terții persoane juridice se realizează în conformitate cu legislația privind protecția datelor și confidențialitatea informațiilor, pe baza unor contracte încheiate cu aceștia.</p>
+        </section>
+
+        <section>
+            <h2>În ce țări transferăm datele dvs. cu caracter personal</h2>
+            
+            <p>În prezent, stocăm și prelucrăm datele dvs. cu caracter personal pe teritoriul României.</p>
+            
+            <p>Cu toate acestea, este posibil să transferăm anumite date ale dvs. cu caracter personal către entități localizate în Uniunea Europeană sau în afacerea Uniunii, inclusiv în țări cărora Comisia Europeană nu le-a recunoscut un nivel adecvat de protecție a datelor cu caracter personal.</p>
+            
+            <p>Vom lua întotdeauna măsuri pentru a ne asigura că orice transfer internațional de date cu caracter personal este gestionat cu atenție pentru a vă proteja drepturile și interesele. Transferurile către furnizorii de servicii și alte părți terțe vor fi întotdeauna protejate prin angajamente contractuale și, dacă este cazul, prin alte garanții, cum ar fi clauzele contractuale standard emise de Comisia Europeană sau schemele de certificare, precum Scutul de confidențialitate pentru protecția datelor cu caracter personal transferate din interiorul UE către Statele Unite ale Americii.</p>
+            
+            <p>Ne puteți contacta oricând, folosind detaliile de contact prezentate mai sus, pentru a afla mai multe informații despre țările în care transferăm datele dvs. și garanțiile pe care le-am implementat pentru protejarea acestora.</p>
+        </section>
+
+        <section>
+            <h2>Cum protejăm securitatea datelor dvs. cu caracter personal</h2>
+            
+            <p>Ne angajăm să asigurăm securitatea datelor cu caracter personal prin implementarea unor măsuri tehnice și organizatorice adecvate, conform standardelor industriei.</p>
+            
+            <p>Transmisia datelor dvs. cu caracter personal se face folosind algoritmi de criptare de ultimă generație și le stocăm pe servere securizate, asigurând în același timp redundanța datelor.</p>
+            
+            <p>În ciuda măsurilor luate pentru a proteja datele dvs. cu caracter personal, vă atragem atenția că transmiterea informațiilor prin internet, în general, sau prin intermediul altor rețele publice, nu este complet sigură, existând riscul ca datele să fie vizualizate și utilizate de către terțe părți neautorizate. Nu putem fi responsabili pentru astfel de vulnerabilități ale unor sisteme care nu sunt sub controlul nostru.</p>
+        </section>
+
+        <section>
+            <h2>Ce drepturi aveți</h2>
+            
+            <p>Regulamentul general privind protecția datelor vă recunoaște o serie de drepturi în legătură cu datele dvs. cu caracter personal. Puteți solicita:</p>
+            
+            <ul>
+                <li>Accesul la datele dvs.</li>
+                <li>Corectarea datelor</li>
+                <li>Obiecția față de prelucrarea datelor</li>
+                <li>Plângerea la autoritatea de supraveghere sau la justiție</li>
+                <li>Ștergerea datelor</li>
+                <li>Restricționarea prelucrării datelor</li>
+                <li>Portabilitatea datelor</li>
+            </ul>
+            
+            <h3>Cum să vă exercitați drepturile:</h3>
+            <p>Pentru a vă exercita drepturile, ne puteți contacta folosind detaliile de contact furnizate mai sus. Vă rugăm să rețineți următoarele aspecte:</p>
+            
+            <p><strong>Identitate:</strong> Ne asigurăm că informațiile dvs. personale sunt protejate. Vă rugăm să ne transmiteți cererile folosind adresa de e-mail asociată contului dvs. reclamepepaine.ro, sau putem solicita informații suplimentare pentru a confirma identitatea dvs.</p>
+            
+            <p><strong>Onorarii:</strong> Nu vom percepe taxe pentru exercitarea drepturilor, cu excepția cazului în care cererea dvs. este nefondată, repetitivă sau excesivă, caz în care vom percepe o taxă rezonabilă. Vă vom informa despre orice taxă înainte de a soluționa cererea.</p>
+            
+            <p><strong>Durata de răspuns:</strong> Vom răspunde cererilor valide într-o lună, sau într-un termen de două luni dacă cererea este complexă sau aveți mai multe solicitări. Vă vom informa dacă va dura mai mult de o lună.</p>
+            
+            <p><strong>Drepturile terțelor părți:</strong> Nu vom respecta cererea dacă aceasta ar afecta negativ drepturile altor persoane vizate.</p>
+            
+            <h3>Drepturi vizate</h3>
+            
+            <h4>Accesul</h4>
+            <p>Puteți să ne cereți următoarele:</p>
+            <ul>
+                <li>Confirmarea prelucrării datelor</li>
+                <li>O copie a datelor</li>
+                <li>Alte informații despre datele dvs.</li>
+            </ul>
+            
+            <h4>Rectificarea</h4>
+            <p>Puteți să ne cereți să rectificăm sau să completăm datele dvs. cu caracter personal care sunt inexacte sau incomplete.</p>
+            <p>Este posibil să încercăm să verificăm exactitatea datelor înainte de a le rectifica.</p>
+            
+            <h4>Ștergerea datelor</h4>
+            <p>Puteți să ne cereți să ștergem datele dvs. cu caracter personal, dar numai în următoarele cazuri:</p>
+            <ul>
+                <li>Datele nu mai sunt necesare pentru scopurile pentru care au fost colectate;</li>
+                <li>V-ați retratat consimțământul (în cazul în care prelucrarea se baza pe consimțământ);</li>
+                <li>Ați exercitat dreptul de a vă opune prelucrării;</li>
+                <li>Datele au fost prelucrate ilegal;</li>
+                <li>Există o obligație legală de a șterge datele.</li>
+            </ul>
+            
+            <p>Nu avem obligația de a șterge datele în următoarele cazuri:</p>
+            <ul>
+                <li>Prelucrarea este necesară pentru respectarea unei obligații legale;</li>
+                <li>Datele sunt necesare pentru constatarea, exercitarea sau apărarea unui drept în instanță.</li>
+            </ul>
+            
+            <p><strong>Important:</strong> Înainte de a solicita ștergerea datelor, asigurați-vă că descărcați toate documentele aferente contului dvs. (ex: facturi, alte documente), deoarece procesul de ștergere este ireversibil și nu veți mai putea accesa aceste documente ulterior.</p>
+            
+            <h4>Restricționarea prelucrării datelor</h4>
+            <p>Puteți solicita restricționarea prelucrării datelor cu caracter personal în următoarele cazuri:</p>
+            <ul>
+                <li>Acuratețea datelor este contestată (pentru a verifica exactitatea lor);</li>
+                <li>Prelucrarea este ilegală, dar nu doriți să ștergem datele;</li>
+                <li>Datele nu mai sunt necesare pentru scopurile pentru care au fost colectate, dar aveți nevoie de ele pentru a constata, exercita sau apăra un drept în instanță;</li>
+                <li>Ați exercitat dreptul de a vă opune, iar verificarea dacă drepturile noastre prevalează este în desfășurare.</li>
+            </ul>
+            
+            <p>Putem continua să folosim datele după o solicitare de restricționare în următoarele situații:</p>
+            <ul>
+                <li>Avem consimțământul dvs.;</li>
+                <li>Este necesar pentru constatarea, exercitarea sau apărarea unui drept în instanță;</li>
+                <li>Este necesar pentru protejarea drepturilor reclamepepaine.ro sau ale unei alte persoane fizice sau juridice.</li>
+            </ul>
+            
+            <h4>Portabilitatea datelor</h4>
+            <p>Puteți solicita furnizarea datelor dvs. cu caracter personal într-un format structurat, utilizat în mod curent și care poate fi citit automat, sau puteți cere ca aceste date să fie „portate" direct către un alt operator de date, dar acest drept se aplică doar în următoarele condiții:</p>
+            <ul>
+                <li>Prelucrarea se bazează pe consimțământul dvs. sau pe încheierea/execuția unui contract cu dvs.;</li>
+                <li>Prelucrarea se face prin mijloace automate.</li>
+            </ul>
+            
+            <h4>Opoziția</h4>
+            <p>Puteți opune în orice moment, din motive legate de situația particulară în care vă aflați, prelucrării datelor dvs. cu caracter personal în temeiul interesului nostru legitim, în cazul în care considerați că drepturile și libertățile dvs. fundamentale prevalează față de acest interes.</p>
+            
+            <p>De asemenea, aveți dreptul să vă opuneți orice prelucrare a datelor în scop de marketing direct (inclusiv crearea de profiluri), fără a invoca vreun motiv. În acest caz, vom întrerupe această prelucrare în cel mai scurt timp posibil.</p>
+            
+            <h4>Luarea de decizii automate</h4>
+            <p>Puteți cere să nu faceți obiectul unei decizii bazate exclusiv pe prelucrarea automată, dar numai atunci când decizia respectivă:</p>
+            <ul>
+                <li>produce efecte juridice cu privire la dvs.; sau</li>
+                <li>vă afectează în alt mod similar și într-o măsură semnificativă.</li>
+            </ul>
+            
+            <p>Acest drept nu se aplică în cazul în care decizia la care s-a ajuns în urma luării automate a deciziilor:</p>
+            <ul>
+                <li>ne este necesară pentru a încheia sau a derula un contract cu dvs.;</li>
+                <li>este autorizată prin lege și există garanții adecvate pentru drepturile și libertățile dvs.; sau</li>
+                <li>se bazează pe consimțământul dvs. explicit.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Plângeri</h2>
+            
+            <p>Aveți dreptul să depuneți o plângere la autoritatea de supraveghere cu privire la prelucrarea datelor dvs. cu caracter personal. În România, datele de contact ale autorității de supraveghere pentru protecția datelor sunt următoarele:</p>
+            
+            <p><strong>Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal</strong><br>
+            B-dul G-ral. Gheorghe Magheru nr. 28-30, Sector 1, cod poștal 010336, București, România<br>
+            Telefon: +40.318.059.211 sau +40.318.059.212<br>
+            E-mail: anspdcp@dataprotection.ro</p>
+            
+            <p>Fără a vă afecta dreptul dvs. de a contacta în orice moment autoritatea de supraveghere, vă rugăm să ne contactați în prealabil și vă promitem că vom depune toate eforturile necesare pentru a rezolva orice problemă pe cale amiabilă.</p>
+            
+            <p>Reamintim faptul că puteți contacta în orice moment Responsabilul DOUBLE INCOME SRL cu protecția datelor prin transmiterea solicitării dvs. prin oricare dintre următoarele modalități:<br>
+            – prin e-mail la adresa: reclamepepaine@gmail.com</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-background-text">@reclame.pe.paine</div>
+        
+        <div class="footer-content">
+            <nav class="legal-links">
+                <a href="termeni-si-conditii.html">Termeni și Condiții</a>
+                <a href="politica-cookies.html">Politica Cookies</a>
+                <a href="gdpr.html">GDPR</a>
+            </nav>
+
+            <div class="copyright">
+                Copyright © 2025 Reclame Pe Paine | Toate drepturile sunt rezervate
+            </div>
+
+            <div class="anpc-buttons">
+                <a href="https://solutii.online.anpc.ro" class="anpc-button" target="_blank">
+                    <i class="fas fa-balance-scale"></i>
+                    Soluționarea Alternativă a Litigiilor
+                </a>
+                
+                <a href="https://webgate.ec.europa.eu/odr" class="anpc-button" target="_blank">
+                    <i class="fas fa-globe"></i>
+                    Soluționarea Online a Litigiilor
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>
